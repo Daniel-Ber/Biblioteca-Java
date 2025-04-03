@@ -13,6 +13,10 @@ public class Livro {
         this.titulo = titulo;
     }
 
+    public  void cadastrarLivro(Biblioteca biblioteca){
+        biblioteca.addLivro(this);
+    }
+
     public void exibirDetalhes(){
         System.out.println("Autor : "+autor+ ". Titulo: "+titulo+ ". id: "+ id+ ". disponibilidade: "+ disponibilidade);
     }

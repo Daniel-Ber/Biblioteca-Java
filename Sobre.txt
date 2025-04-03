@@ -11,7 +11,6 @@ Classes principais:
 Livro:
 Atributos: id (int), título 📖, autor ✍️, disponível ✅/❌.
 Métodos: cadastrarLivro(), exibirDetalhes().
-Atualmente cadastrando pela biblioteca.
 
 
 Estudante:
@@ -23,10 +22,10 @@ Atributos: livro (Livro) 📘, estudante (Estudante) 👤, data de empréstimo �
 Métodos: realizarEmprestimo().
 
 Funcionalidades obrigatórias:
-Cadastrar livros no sistema 📚.
-Cadastrar estudantes no sistema 🎓.
-Realizar empréstimos de livros disponíveis 📘.
-Consultar livros disponíveis 🔍.
+[x]Cadastrar livros no sistema 📚.
+[x]Cadastrar estudantes no sistema 🎓.
+[x]Realizar empréstimos de livros disponíveis 📘.
+[x]Consultar livros disponíveis 🔍.
 
 ⚖️ Regras de negócio:
 
