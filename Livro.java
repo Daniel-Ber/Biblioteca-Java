@@ -1,7 +1,7 @@
 public class Livro {
     int id;
     String autor, titulo;
-    boolean disponibilidade;
+    boolean disponibilidade ;
     Estudante alunoLeitorAtual;
     Livro(){
 

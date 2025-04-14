@@ -26,6 +26,17 @@ public class Biblioteca {
             System.out.println("Nome: "+this.estudantesCadastrados.get(i).nome+"Matricula :"+this.estudantesCadastrados.get(i).matricula);
         }
     }
+
+    public Estudante retornarEstudanteCadastrado(String matriculaEstudante){
+        Estudante estudante = new Estudante();
+         for (int i = 0  ; i < this.estudantesCadastrados.size() ; i++ ){
+            if (matriculaEstudante.equals(estudantesCadastrados.get(i).matricula)){
+                estudante = estudantesCadastrados.get(i);
+                break;
+            }
+        }
+         return estudante;
+    }
     public  void mostrarTodosLivros(){
         for (int i = 0 ; i < this.livrosCadastrados.size();  i++){
            if (this.livrosCadastrados.get(i).disponibilidade){
@@ -45,7 +56,7 @@ public class Biblioteca {
         }
     }
 
-    public void mostrarEmpréstimos(){
+    public void mostrarEmprestimos(){
         for (int i = 0; i < emprestimosFeitos.size(); i++){
            Emprestimo exemplo = emprestimosFeitos.get(i);
            System.out.println("O estudante : "+exemplo.estudante+" fez um empréstimo e agora está comm o livro : "+exemplo.livro);
@@ -58,6 +69,16 @@ public class Biblioteca {
                 System.out.println("Titulo: "+this.livrosCadastrados.get(i).titulo+" Disponibilidade: Disponivel");
             }
         }
+    }
+    public  Livro retornarLivro(int id){
+         Livro livro = new Livro();
+         for (int i = 0 ; i < this.livrosCadastrados.size() ; i++ ){
+             if (id == livrosCadastrados.get(i).id){
+                 livro = livrosCadastrados.get(i);
+                 break;
+             }
+         }
+         return  livro;
     }
 
 

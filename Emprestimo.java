@@ -1,26 +1,33 @@
-import java.sql.Date;
+
 public class Emprestimo {
     Livro livro;
     Estudante estudante;
-    Date dataEmpréstimo;
-
+    String dataEmprestimo;
+    boolean validacao;
     Emprestimo(){
 
     }
 
     //Acredito que não precisa de um métdo realizarEmprestimo() o empréstimo em si como objeto já funciona
-    Emprestimo(Estudante estudante, Livro livro, Date dataEmpréstimo, Biblioteca biblioteca ){
-        if (livro.disponibilidade){
+    Emprestimo(Estudante estudante, Livro livro, String dataEmprestimo, Biblioteca biblioteca ){
+        if (livro.disponibilidade  && estudante != null){
             this.livro = livro;
             this.livro.disponibilidade = false;
             this.livro.alunoLeitorAtual = estudante;
             this.estudante = estudante;
             this.estudante.leituraAtual = livro;
-            this.dataEmpréstimo = dataEmpréstimo;
+            this.dataEmprestimo = dataEmprestimo;
+            this.validacao = true;
             biblioteca.addEmprestimo(this);
             System.out.println("O empréstimo do livro "+ this.livro.titulo + " foi feito para o aluno "+ this.estudante.nome);
-        }else{
-            System.out.println("Este livro : "+ livro.titulo+" não está disponivel.");
+        }
+        else if (estudante == null){
+            System.out.print("Este estudante não esta cadastrado no sistema.");
+            validacao = false;
+        }
+        else if(livro == null || livro.disponibilidade == false){
+            System.out.println("Este livro : "+ livro.titulo+" não está disponivel ou não existe. ");
+            validacao = false;
             System.gc();
         }
     }
@@ -30,18 +37,18 @@ public class Emprestimo {
         this.estudante.leituraAtual = null;
         this.livro = null;
         this.estudante = null;
-        this.dataEmpréstimo = null;
+        this.dataEmprestimo = null;
         biblioteca.retirarEmprestimo(this);
     }
 
-    public void realizarEmpréstimo(Estudante estudante , Livro livro , Date dataEmpréstimo ){
+    public void realizarEmpréstimo(Estudante estudante , Livro livro , String dataEmpréstimo ){
         if (livro.disponibilidade){
             this.livro = livro;
             this.livro.disponibilidade = false;
             this.livro.alunoLeitorAtual = estudante;
             this.estudante = estudante;
             this.estudante.leituraAtual = livro;
-            this.dataEmpréstimo = dataEmpréstimo;
+            this.dataEmprestimo = dataEmpréstimo;
             System.out.println("O empréstimo do livro "+ this.livro.titulo + " foi feito para o aluno "+ this.estudante.nome);
         }else{
             System.out.println("Este livro : "+ livro.titulo+" não está disponivel. Este empréstimo não pode ser concluido no momento.");

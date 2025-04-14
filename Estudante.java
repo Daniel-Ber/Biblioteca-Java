@@ -2,6 +2,7 @@ public class Estudante {
     String nome, matricula;
     Livro leituraAtual;
 
+    Estudante(){}
     Estudante(String nome , String matricula){
         this.matricula = matricula;
         this.nome = nome;
@@ -16,6 +17,7 @@ public class Estudante {
     }
     public void cadastrarEstudante(Biblioteca biblioteca){
         biblioteca.addEstudante(this);
+        System.out.print("O estudante :"+ this.nome+ " ja está cadastrado na biblioteca ");
     }
 
 }

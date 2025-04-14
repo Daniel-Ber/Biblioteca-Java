@@ -33,10 +33,10 @@ Atributos: livro (Livro) 📘, estudante (Estudante) 👤, data de empréstimo �
 Métodos: realizarEmprestimo().
 
 Funcionalidades obrigatórias:
-[x]Cadastrar livros no sistema 📚.
-[x]Cadastrar estudantes no sistema 🎓.
-[x]Realizar empréstimos de livros disponíveis 📘.
-[x]Consultar livros disponíveis 🔍.
+Cadastrar livros no sistema 📚.
+Cadastrar estudantes no sistema 🎓.
+Realizar empréstimos de livros disponíveis 📘.
+Consultar livros disponíveis 🔍.
 
 ⚖️ Regras de negócio:
 
