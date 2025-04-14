@@ -38,30 +38,15 @@ public class Emprestimo {
         biblioteca.retirarEmprestimo(this);
     }
 
-    public void realizarEmpréstimo(Estudante estudante , Livro livro , String dataEmpréstimo ){
-        if (livro.disponibilidade){
-            this.livro = livro;
-            this.livro.disponibilidade = false;
-            this.livro.alunoLeitorAtual = estudante;
-            this.estudante = estudante;
-            this.estudante.leituraAtual = livro;
-            this.dataEmprestimo = dataEmpréstimo;
-            System.out.println("O empréstimo do livro "+ this.livro.titulo + " foi feito para o aluno "+ this.estudante.nome);
-        }else{
-            System.out.println("Este livro : "+ livro.titulo+" não está disponivel. Este empréstimo não pode ser concluido no momento.");
+    public void realizarEmprestimo(Biblioteca biblioteca){
+        if (this.validacao){
+            cadastrarEmprestimo(biblioteca);
         }
     }
 
-    public void cadastrarEmprestimo(Biblioteca biblioteca){
+    private void cadastrarEmprestimo(Biblioteca biblioteca){
         if (this.livro.disponibilidade == false && this.livro.alunoLeitorAtual != null && this.estudante.leituraAtual!= null){
             biblioteca.addEmprestimo(this);
-        }else {
-            if (this.livro.disponibilidade){
-                System.out.println("Não é possivel cadastrar este empréstimo pois o livro está disponivel para qualquer um ler. ;");
-            }
-            if (this.livro.alunoLeitorAtual == null || this.estudante.leituraAtual == null){
-                System.out.println("Não é possivel cadastrar este empréstimo pois o livro não tem leitor e/ou o aluno não está lendo nenhum livro");
-            }
         }
     }
 }

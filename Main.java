@@ -48,7 +48,7 @@ public class Main {
                 Emprestimo emprestimo = new Emprestimo(estudante,livro,data);
                 if (emprestimo.validacao){
                     //Mensagem já vai aparecer pela classe Emprestimo.
-                    bibliotecaPrincipal.addEmprestimo(emprestimo);
+                    emprestimo.realizarEmprestimo(bibliotecaPrincipal);
                 }else{
                     System.out.print("O empréstimo não foi realizado!");
                 }
