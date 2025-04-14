@@ -45,9 +45,12 @@ public class Main {
                 String data = sc.nextLine();
                 Livro livro = bibliotecaPrincipal.retornarLivro(id);
                 Estudante estudante = bibliotecaPrincipal.retornarEstudanteCadastrado(matricula);
-                Emprestimo emprestimo = new Emprestimo(estudante,livro,data,bibliotecaPrincipal);
+                Emprestimo emprestimo = new Emprestimo(estudante,livro,data);
                 if (emprestimo.validacao){
+                    //Mensagem já vai aparecer pela classe Emprestimo.
                     bibliotecaPrincipal.addEmprestimo(emprestimo);
+                }else{
+                    System.out.print("O empréstimo não foi realizado!");
                 }
             }
         }

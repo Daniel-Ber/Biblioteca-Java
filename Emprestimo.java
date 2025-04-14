@@ -3,13 +3,13 @@ public class Emprestimo {
     Livro livro;
     Estudante estudante;
     String dataEmprestimo;
-    boolean validacao;
+    boolean validacao = false;
     Emprestimo(){
 
     }
 
     //Acredito que não precisa de um métdo realizarEmprestimo() o empréstimo em si como objeto já funciona
-    Emprestimo(Estudante estudante, Livro livro, String dataEmprestimo, Biblioteca biblioteca ){
+    Emprestimo(Estudante estudante, Livro livro, String dataEmprestimo ){
         if (livro.disponibilidade  && estudante != null){
             this.livro = livro;
             this.livro.disponibilidade = false;
@@ -18,16 +18,13 @@ public class Emprestimo {
             this.estudante.leituraAtual = livro;
             this.dataEmprestimo = dataEmprestimo;
             this.validacao = true;
-            biblioteca.addEmprestimo(this);
             System.out.println("O empréstimo do livro "+ this.livro.titulo + " foi feito para o aluno "+ this.estudante.nome);
         }
         else if (estudante == null){
             System.out.print("Este estudante não esta cadastrado no sistema.");
-            validacao = false;
         }
         else if(livro == null || livro.disponibilidade == false){
             System.out.println("Este livro : "+ livro.titulo+" não está disponivel ou não existe. ");
-            validacao = false;
             System.gc();
         }
     }
