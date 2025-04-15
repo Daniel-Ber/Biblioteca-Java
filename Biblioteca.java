@@ -70,6 +70,14 @@ public class Biblioteca {
             }
         }
     }
+    public void mostrarLivrosNaoDisponiveis(){
+        for (int i = 0; i < livrosCadastrados.size() ; i++) {
+            if (livrosCadastrados.get(i).disponibilidade == false){
+                System.out.println("Titulo: "+this.livrosCadastrados.get(i).titulo+" Disponibilidade: Indisponivel");
+            }
+        }
+    }
+
     public  Livro retornarLivro(int id){
          Livro livro = new Livro();
          for (int i = 0 ; i < this.livrosCadastrados.size() ; i++ ){

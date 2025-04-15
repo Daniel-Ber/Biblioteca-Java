@@ -16,12 +16,12 @@ public class Main {
         Biblioteca bibliotecaPrincipal = new Biblioteca();
 
         System.out.println("Bem vindo! Digite o que deseja.");
-        System.out.print("Referente aos estudantes (1) , referente aos livros(2) : ");
+        System.out.print("Referente aos estudantes (1) e referente aos livros(2) : ");
         int escolha = sc.nextByte();
 
         //Referente aos estudantes
         if(escolha == 1 ){
-            System.out.print("Para cadastrar estudantes(1), para fazer empréstimos(2) : ");
+            System.out.print("Cadastrar estudantes(1) e  para fazer empréstimos(2) : ");
             escolha = sc.nextByte();
             //Cadastro de estudantes
             if (escolha == 1 ){
@@ -55,7 +55,7 @@ public class Main {
             }
         //Referente aos livros
         }else if (escolha == 2){
-            System.out.print("Referente aos livros : (1) para cadastro de livros , (2) para consulta de livros : ");
+            System.out.print("Referente aos livros : (1)  cadastro de livros e (2) mostrar livros  : ");
             escolha = sc.nextByte();
             //Cadastro de livros
             if (escolha == 1){
@@ -77,9 +77,17 @@ public class Main {
                 Livro novoLivro = new Livro(nomeAutor , idLivro , disponibilidade , titulo );
                 novoLivro.cadastrarLivro(bibliotecaPrincipal);
 
-            }//Consulta
+            }//Mostrar livros
             else if (escolha == 2 ){
-
+                System.out.print("Mostrar TODOS os livros (1) , mostrar APENAS os disponiveis (2) e mostrar APENAS os indisponiveis(3)");
+                escolha = sc.nextByte();
+                if (escolha == 1){
+                    bibliotecaPrincipal.mostrarTodosLivros();
+                } else if (escolha == 2) {
+                    bibliotecaPrincipal.mostrarLivrosDisponiveis();
+                }else  if (escolha == 3){
+                    bibliotecaPrincipal.mostrarLivrosNaoDisponiveis();
+                }
             }
 
         }
