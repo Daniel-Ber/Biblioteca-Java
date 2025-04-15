@@ -53,6 +53,33 @@ public class Main {
                     System.out.print("O empréstimo não foi realizado!");
                 }
             }
+        //Referente aos livros
+        }else if (escolha == 2){
+            System.out.print("Referente aos livros : (1) para cadastro de livros , (2) para consulta de livros.");
+            escolha = sc.nextByte();
+            //Cadastro de livros
+            if (escolha == 1){
+                System.out.print("Digite o nome do autor  : ");
+                String nomeAutor = sc.nextLine();
+                System.out.print("Digite o id : ");
+                int idLivro = sc.nextInt();
+                System.out.print("O livro está disponível ? [S/N]");
+                boolean disponibilidade = true;
+                String S_N = sc.nextLine();
+                 if (S_N.equals("N")) {
+                    disponibilidade = false;
+                }
+                System.out.print("Digite o nome do Titulo : ");
+                String titulo = sc.nextLine();
+
+                Livro novoLivro = new Livro(nomeAutor , idLivro , disponibilidade , titulo );
+                novoLivro.cadastrarLivro(bibliotecaPrincipal);
+
+            }//Consulta
+            else if (escolha == 2 ){
+
+            }
+
         }
 
     }

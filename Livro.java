@@ -15,6 +15,7 @@ public class Livro {
 
     public  void cadastrarLivro(Biblioteca biblioteca){
         biblioteca.addLivro(this);
+        System.out.print("O livro "+titulo+ " foi cadastrado na biblioteca! ");
     }
 
     public void exibirDetalhes(){
