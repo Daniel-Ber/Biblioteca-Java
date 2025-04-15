@@ -55,14 +55,16 @@ public class Main {
             }
         //Referente aos livros
         }else if (escolha == 2){
-            System.out.print("Referente aos livros : (1) para cadastro de livros , (2) para consulta de livros.");
+            System.out.print("Referente aos livros : (1) para cadastro de livros , (2) para consulta de livros : ");
             escolha = sc.nextByte();
             //Cadastro de livros
             if (escolha == 1){
+                sc.nextLine();
                 System.out.print("Digite o nome do autor  : ");
                 String nomeAutor = sc.nextLine();
                 System.out.print("Digite o id : ");
                 int idLivro = sc.nextInt();
+                sc.nextLine();
                 System.out.print("O livro está disponível ? [S/N]");
                 boolean disponibilidade = true;
                 String S_N = sc.nextLine();
