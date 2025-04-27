@@ -16,12 +16,14 @@ public class Main {
         Biblioteca bibliotecaPrincipal = new Biblioteca();
 
         System.out.println("Bem vindo! Digite o que deseja.");
-        System.out.print("Referente aos estudantes (1) e referente aos livros(2) : ");
+        System.out.print("Referente aos estudantes (1) , referente aos livros(2)  e para sair (3) : ");
         int escolha = sc.nextByte();
-
+        if(escolha == 3 ){
+           System.out.print("Até logo !");
+        }
         //Referente aos estudantes
-        if(escolha == 1 ){
-            System.out.print("Cadastrar estudantes(1) e  para fazer empréstimos(2) : ");
+        else if(escolha == 1 ){
+            System.out.print("Cadastrar estudantes(1)  e para fazer empréstimos(2) : ");
             escolha = sc.nextByte();
             //Cadastro de estudantes
             if (escolha == 1 ){
@@ -83,14 +85,12 @@ public class Main {
                 escolha = sc.nextByte();
                 if (escolha == 1){
                     bibliotecaPrincipal.mostrarTodosLivros();
-                } else if (escolha == 2) {
+                }else if (escolha == 2) {
                     bibliotecaPrincipal.mostrarLivrosDisponiveis();
                 }else  if (escolha == 3){
                     bibliotecaPrincipal.mostrarLivrosNaoDisponiveis();
                 }
             }
-
         }
-
     }
 }
