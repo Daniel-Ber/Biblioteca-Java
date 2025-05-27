@@ -43,8 +43,4 @@ Consultar livros disponíveis 🔍.
 Um livro só pode ser emprestado se estiver disponível ✅.
 Após o empréstimo, o status do livro deve mudar para indisponível ❌.
 
-💡 Dicas:
 
-Utilize listas para armazenar os livros e estudantes 📂.
-Faça a verificação de disponibilidade do livro no momento do empréstimo ⚠️.
-Use laços de repetição e condicionais para navegar pelas funcionalidades 🔄.
